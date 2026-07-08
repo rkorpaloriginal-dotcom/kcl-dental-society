@@ -1,0 +1,47 @@
+import type { CommitteeMember } from './types';
+
+export const COMMITTEE: CommitteeMember[] = [
+  { name: 'Dr Claire McCarthy', role: 'Staff President', group: 'Leadership' },
+  { name: 'Aman Aziz', role: 'President', group: 'Leadership' },
+  { name: 'Raveena Dheer', role: 'Vice-President', group: 'Leadership' },
+  { name: 'Nikhil Astagi', role: 'President-Elect', group: 'Leadership' },
+  { name: 'Sarah Al Chalabi', role: 'Past President', group: 'Leadership' },
+
+  { name: 'Nikita Malhotra', role: 'Sponsorship Officer', group: 'Officers' },
+  { name: 'Arya Bhatt', role: 'Secretary', group: 'Officers' },
+  { name: 'Nora Al Morhiby', role: 'Academic Events Coordinator', group: 'Officers' },
+  { name: 'Yasmine Puchakayala', role: 'Treasurer', group: 'Officers' },
+  { name: 'Sara Saliman', role: 'Wellbeing Officer', group: 'Officers' },
+  { name: 'Ibrahim Jamroze', role: 'Charity Representative', group: 'Officers' },
+
+  { name: 'Saffron Sandhu', role: 'Events Representative', group: 'Events Team' },
+  { name: 'Selinay Ozgun', role: 'Events Representative', group: 'Events Team' },
+  { name: 'Leeyah Rafiq', role: 'Events Representative (Non-Drinking)', group: 'Events Team' },
+  { name: 'Shreya Pedda-Venkatagari', role: 'Social Media Representative', group: 'Events Team' },
+  { name: 'Yasmin Abdullahi Ali', role: 'Web & Media Representative', group: 'Events Team' },
+  { name: 'Aneeka Mayor', role: 'Junior Ball Representative', group: 'Events Team' },
+  { name: 'Kishan Bouri', role: 'Senior Ball Representative', group: 'Events Team' },
+  { name: 'Rohan Korpal', role: 'Junior BDSA Representative', group: 'Events Team' },
+  { name: 'Abigail Cheong', role: 'Senior BDSA Representative', group: 'Events Team' },
+  { name: 'Hadi Abbas', role: 'Sports Representative', group: 'Events Team' },
+
+  { name: 'Kiran Johal', role: 'BDS1 Representative', group: 'Year Representatives' },
+  { name: 'Yaman Entabi', role: 'BDS1 Representative', group: 'Year Representatives' },
+  { name: 'Stella Yu', role: 'DTH1 Representative', group: 'Year Representatives' },
+  { name: 'Hooriya Eman', role: 'BDS2 Representative', group: 'Year Representatives' },
+  { name: 'Mohammad Jafari', role: 'BDS2 Representative', group: 'Year Representatives' },
+  { name: 'Meryem Delen', role: 'DTH2 Representative', group: 'Year Representatives' },
+  { name: 'Ella Song', role: 'BDS3 Representative', group: 'Year Representatives' },
+  { name: 'Alex Wilcock', role: 'BDS3 Representative', group: 'Year Representatives' },
+  { name: 'Samirah Ahmed', role: 'DTH3 Representative', group: 'Year Representatives' },
+  { name: 'Jasmine Patel', role: 'BDS4 Representative', group: 'Year Representatives' },
+  { name: 'Bilal Idris', role: 'BDS4 Representative', group: 'Year Representatives' },
+  { name: 'Nicka Divsalar', role: 'BDS5 Representative', group: 'Year Representatives' },
+  { name: 'Lima Noori', role: 'BDS5 Representative', group: 'Year Representatives' },
+  { name: 'Ashneet Singh', role: 'GPEP Representative', group: 'Year Representatives' },
+  { name: 'Noorie Dewan', role: 'International Representative', group: 'Year Representatives' },
+
+  { name: 'Navreet Kaur', role: 'Smile Society Vice President', group: 'Affiliated' },
+  { name: 'Riya Mann', role: 'Smile Society President', group: 'Affiliated' },
+  { name: 'Hfsa Fahad', role: "Kings' Crown Chief Editor", group: 'Affiliated' },
+];
