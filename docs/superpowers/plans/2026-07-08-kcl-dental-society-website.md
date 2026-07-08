@@ -1025,20 +1025,21 @@ export function RevealOnScroll({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-
-    setReady(true);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();
+        } else {
+          setAnimate(true);
+          setVisible(false);
         }
       },
       { threshold: 0.15 }
@@ -1047,8 +1048,8 @@ export function RevealOnScroll({
     return () => observer.disconnect();
   }, []);
 
-  const visibilityClass = !ready || visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6';
-  const transitionClass = ready ? 'transition-all duration-700 ease-out' : '';
+  const visibilityClass = visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6';
+  const transitionClass = animate ? 'transition-all duration-700 ease-out' : '';
 
   return (
     <div ref={ref} className={`${className} ${transitionClass} ${visibilityClass}`}>
@@ -1057,6 +1058,8 @@ export function RevealOnScroll({
   );
 }
 ```
+
+**Design note (corrected during implementation, 2026-07-08):** the original draft of this component started `visible` at `false` and gated it behind a synchronously-set `ready` flag, intending `!ready` to keep content shown until the observer had a chance to run. In practice `ready` flips to `true` in the same mount effect that starts the observer, and the observer's first callback is always asynchronous — so there is a real window after mount where `ready=true` and `visible=false`, which renders `opacity-0`. That reproduces the exact bug this component exists to prevent (a frame of hidden content gated by JS timing), independent of any test framework. The corrected version above starts `visible=true` (assume visible until the observer proves otherwise) and only opts an element into the hidden/animated state if the observer's first callback reports it is not currently intersecting.
 
 - [ ] **Step 4: Run test to verify it passes**
 
