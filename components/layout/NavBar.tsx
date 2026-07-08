@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 const NAV_LINKS = [
@@ -14,16 +12,7 @@ export function NavBar() {
   return (
     <header className="bg-navy text-white">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 font-display text-lg tracking-wide">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/logo.png"
-            alt=""
-            className="h-8 w-8 object-contain"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = 'none';
-            }}
-          />
+        <Link href="/" className="font-display text-lg tracking-wide">
           KCL Dental Society
         </Link>
         <ul className="flex gap-6">
