@@ -14,6 +14,11 @@ global.IntersectionObserver = IntersectionObserverMock as unknown as typeof Inte
 
 import '@testing-library/jest-dom/vitest';
 
+// jsdom does not implement video playback; stub it so components that call
+// videoElement.play() in an effect don't log "Not implemented" noise.
+HTMLMediaElement.prototype.play = () => Promise.resolve();
+HTMLMediaElement.prototype.pause = () => {};
+
 // Polyfill video element attributes that jsdom doesn't properly handle
 const videoAttributes = ['muted', 'autoplay', 'loop', 'playsinline', 'controls'];
 videoAttributes.forEach((attr) => {
