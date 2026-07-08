@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kingsdentalsociety.com'),
   title: {
     default: "KCL Dental Society — King's College London Dental Society",
     template: '%s | KCL Dental Society',
