@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #1b2a56;
+  --color-gold: #c9992e;
+  --color-body: #444444;
+}
+
+body {
+  color: var(--color-body);
+  background-color: #ffffff;
+}
+
+a {
+  color: var(--color-navy);
+}
+
+a:hover {
+  color: var(--color-gold);
+}
