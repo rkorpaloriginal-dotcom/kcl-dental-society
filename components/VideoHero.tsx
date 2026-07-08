@@ -26,6 +26,7 @@ export function VideoHero() {
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
         src="/video/welcome.mp4"
+        poster="/images/events/boat-party.jpg"
         autoPlay={true}
         muted={true}
         loop={true}
