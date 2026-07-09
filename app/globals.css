@@ -5,12 +5,15 @@
 :root {
   --color-navy: #1b2a56;
   --color-gold: #c9992e;
-  --color-body: #444444;
+  --color-cream: #f7f3ec;
+  --color-body: #1a1613;
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 body {
+  background-color: var(--color-cream);
   color: var(--color-body);
-  background-color: #ffffff;
 }
 
 a {
@@ -19,4 +22,41 @@ a {
 
 a:hover {
   color: var(--color-gold);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+@keyframes word-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes clip-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
