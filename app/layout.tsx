@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Fraunces, Instrument_Sans } from 'next/font/google';
 import { NavBar } from '@/components/layout/NavBar';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-fraunces',
   display: 'swap',
 });
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-instrument',
   display: 'swap',
 });
 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${instrumentSans.variable}`}>
       <body className="flex min-h-screen flex-col font-body text-body">
         <NavBar />
         <main className="flex-1">{children}</main>
