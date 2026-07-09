@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { EVENT_CATEGORIES } from '@/data/events';
 import { EventCard } from '@/components/EventCard';
+import { RevealOnScroll } from '@/components/RevealOnScroll';
 
 type Tab = 'what-we-run' | 'upcoming';
 
@@ -35,9 +36,15 @@ export function EventsTabs() {
       </div>
 
       {tab === 'what-we-run' ? (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {EVENT_CATEGORIES.map((category) => (
-            <EventCard key={category.slug} category={category} />
+        <div className="grid auto-rows-[14rem] gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {EVENT_CATEGORIES.map((category, index) => (
+            <RevealOnScroll
+              key={category.slug}
+              variant="clip"
+              className={`h-full ${index % 4 === 0 || index % 4 === 3 ? 'row-span-2' : ''}`}
+            >
+              <EventCard category={category} />
+            </RevealOnScroll>
           ))}
         </div>
       ) : (
