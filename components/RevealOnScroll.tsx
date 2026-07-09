@@ -5,13 +5,14 @@ import { useEffect, useRef, useState } from 'react';
 export function RevealOnScroll({
   children,
   className = '',
+  variant = 'fade',
 }: {
   children: React.ReactNode;
   className?: string;
+  variant?: 'fade' | 'clip';
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
-  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -23,7 +24,6 @@ export function RevealOnScroll({
           setVisible(true);
           observer.disconnect();
         } else {
-          setAnimate(true);
           setVisible(false);
         }
       },
@@ -33,8 +33,15 @@ export function RevealOnScroll({
     return () => observer.disconnect();
   }, []);
 
-  const visibilityClass = visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6';
-  const transitionClass = animate ? 'transition-all duration-700 ease-out' : '';
+  const fadeClass = visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6';
+  const clipClass = visible
+    ? '[clip-path:inset(0_0_0%_0)]'
+    : '[clip-path:inset(0_0_100%_0)]';
+  const visibilityClass = variant === 'clip' ? clipClass : fadeClass;
+  const transitionClass =
+    variant === 'clip'
+      ? 'transition-[clip-path] duration-700 ease-expo-out'
+      : 'transition-all duration-700 ease-expo-out';
 
   return (
     <div ref={ref} className={`${className} ${transitionClass} ${visibilityClass}`}>
