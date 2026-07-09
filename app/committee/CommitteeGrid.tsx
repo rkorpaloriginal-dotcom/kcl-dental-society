@@ -1,6 +1,6 @@
 import { COMMITTEE } from '@/data/committee';
 import type { CommitteeGroup } from '@/data/types';
-import { CommitteeCard } from '@/components/CommitteeCard';
+import { CommitteeRow } from '@/components/CommitteeRow';
 
 const GROUP_ORDER: CommitteeGroup[] = [
   'Leadership',
@@ -18,12 +18,16 @@ export function CommitteeGrid() {
         if (members.length === 0) return null;
         return (
           <section key={group}>
-            <h2 className="mb-6 text-center font-display text-2xl text-navy">{group}</h2>
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-              {members.map((member) => (
-                <CommitteeCard key={`${member.name}-${member.role}`} member={member} />
+            <h2 className="mb-4 font-display text-2xl text-navy">{group}</h2>
+            <ul>
+              {members.map((member, index) => (
+                <CommitteeRow
+                  key={`${member.name}-${member.role}`}
+                  member={member}
+                  index={index}
+                />
               ))}
-            </div>
+            </ul>
           </section>
         );
       })}

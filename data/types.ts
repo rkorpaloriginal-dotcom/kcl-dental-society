@@ -16,11 +16,12 @@ export interface CommitteeMember {
   name: string;
   role: string;
   group: CommitteeGroup;
-  // A broken path here renders as a broken image, not a fallback avatar —
-  // CommitteeCard's onError handling can't rescue an SSR'd <img> that fails
-  // before hydration attaches the listener (see the NavBar logo fix in
-  // this project's history for the same failure mode). Verify the file
-  // exists in public/ before setting this.
+  // Not currently rendered — the editorial index layout (CommitteeRow)
+  // is pure typography by design. If a future layout reintroduces
+  // photos, avoid a bare onError-based fallback: an SSR'd <img> that
+  // fails before hydration attaches the listener can't be rescued that
+  // way (see the NavBar logo fix in this project's history for the same
+  // failure mode).
   photo?: string;
 }
 
