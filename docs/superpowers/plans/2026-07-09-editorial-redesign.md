@@ -388,7 +388,6 @@ export function RevealOnScroll({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
-  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -400,7 +399,6 @@ export function RevealOnScroll({
           setVisible(true);
           observer.disconnect();
         } else {
-          setAnimate(true);
           setVisible(false);
         }
       },
@@ -415,11 +413,10 @@ export function RevealOnScroll({
     ? '[clip-path:inset(0_0_0%_0)]'
     : '[clip-path:inset(0_0_100%_0)]';
   const visibilityClass = variant === 'clip' ? clipClass : fadeClass;
-  const transitionClass = animate
-    ? variant === 'clip'
+  const transitionClass =
+    variant === 'clip'
       ? 'transition-[clip-path] duration-700 ease-expo-out'
-      : 'transition-all duration-700 ease-expo-out'
-    : '';
+      : 'transition-all duration-700 ease-expo-out';
 
   return (
     <div ref={ref} className={`${className} ${transitionClass} ${visibilityClass}`}>
@@ -428,6 +425,8 @@ export function RevealOnScroll({
   );
 }
 ```
+
+**Design note (corrected during implementation, 2026-07-09):** the draft above originally gated `transitionClass` behind a separate `animate` state flag that only became `true` after the IntersectionObserver's callback fired — meaning `ease-expo-out` never appeared in the rendered className under a test double that never fires the callback (and, more importantly, meant no element ever declared its transition timing function until the exact moment it needed one). The corrected version applies the transition class unconditionally and drops `animate` entirely. This is safe: CSS transitions never play on an element's first paint (there is no prior style to transition *from*), so declaring the transition up front causes no unwanted animation on load — it simply takes effect the first time `visible` changes.
 
 - [ ] **Step 4: Run test to verify it passes**
 
