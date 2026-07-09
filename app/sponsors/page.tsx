@@ -14,33 +14,35 @@ export default function SponsorsPage() {
   const partners = SPONSORS.filter((s) => s.tier === 'partner');
 
   return (
-    <RevealOnScroll className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-center font-display text-4xl text-navy">Our Sponsors</h1>
-      <p className="mx-auto mt-4 max-w-2xl text-center">
-        We host the largest Trade Fayre of any university dental society in the UK, with over
-        400 student attendees — supported by industry partners who believe in KCL Dental
-        Society.
-      </p>
+    <RevealOnScroll>
+      <div className="mx-auto max-w-6xl px-6 pt-16">
+        <h1 className="font-display text-5xl text-navy md:text-7xl">Our Sponsors</h1>
+        <p className="mt-4 max-w-xl text-body">
+          We host the largest Trade Fayre of any university dental society in the UK, with over
+          400 student attendees — supported by industry partners who believe in KCL Dental
+          Society.
+        </p>
+      </div>
 
-      <div className="mx-auto mt-12 max-w-xl">
+      <div className="mt-12">
         <SponsorTile sponsor={diamond} />
       </div>
 
-      <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 px-6 sm:grid-cols-3">
         {partners.map((sponsor) => (
           <SponsorTile key={sponsor.name} sponsor={sponsor} />
         ))}
       </div>
 
-      <div className="mt-16 text-center">
-        <h2 className="font-display text-2xl text-navy">Become a Sponsor</h2>
-        <p className="mx-auto mt-2 max-w-xl">
+      <div className="mx-auto max-w-6xl px-6 py-20 text-center">
+        <h2 className="font-display text-3xl text-navy">Become a Sponsor</h2>
+        <p className="mx-auto mt-2 max-w-xl text-body">
           We're happy to discuss any form of sponsorship — financial, product, or academic
           opportunity.
         </p>
         <a
           href="mailto:kingsdentalsociety@gmail.com?subject=Sponsorship%20Enquiry"
-          className="mt-6 inline-block rounded-full bg-navy px-6 py-3 text-white hover:bg-gold"
+          className="mt-6 inline-block border-b-2 border-gold text-navy hover:text-gold"
         >
           Become a Sponsor
         </a>
