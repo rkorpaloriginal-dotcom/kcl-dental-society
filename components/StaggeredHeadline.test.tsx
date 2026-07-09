@@ -17,4 +17,13 @@ describe('StaggeredHeadline', () => {
     const delays = wordSpans.map((el) => el.style.animationDelay);
     expect(delays).toEqual(['0ms', '80ms', '160ms']);
   });
+
+  it('renders as the tag specified by the "as" prop, defaulting to span', () => {
+    const { container } = render(<StaggeredHeadline text="Hello" />);
+    expect(container.querySelector('span')).toBeInTheDocument();
+    expect(container.querySelector('h1')).not.toBeInTheDocument();
+
+    const { container: container2 } = render(<StaggeredHeadline text="Hello" as="h1" />);
+    expect(container2.querySelector('h1')).toBeInTheDocument();
+  });
 });

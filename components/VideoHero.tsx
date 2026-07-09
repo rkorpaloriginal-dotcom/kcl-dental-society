@@ -38,6 +38,7 @@ export function VideoHero() {
         <StaggeredHeadline
           text="King's College London Dental Society"
           className="font-display text-5xl leading-[0.95] tracking-tight text-cream md:text-8xl"
+          as="h1"
         />
         <p className="mt-6 text-lg uppercase tracking-[0.2em] text-gold">
           Community · Careers · Culture

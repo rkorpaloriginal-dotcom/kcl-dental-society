@@ -18,7 +18,7 @@ export function EventsTabs() {
           aria-selected={tab === 'what-we-run'}
           onClick={() => setTab('what-we-run')}
           className={`rounded-full px-5 py-2 ${
-            tab === 'what-we-run' ? 'bg-navy text-white' : 'border border-navy text-navy'
+            tab === 'what-we-run' ? 'bg-navy text-cream' : 'border border-navy text-navy'
           }`}
         >
           What We Run
@@ -28,7 +28,7 @@ export function EventsTabs() {
           aria-selected={tab === 'upcoming'}
           onClick={() => setTab('upcoming')}
           className={`rounded-full px-5 py-2 ${
-            tab === 'upcoming' ? 'bg-navy text-white' : 'border border-navy text-navy'
+            tab === 'upcoming' ? 'bg-navy text-cream' : 'border border-navy text-navy'
           }`}
         >
           Upcoming

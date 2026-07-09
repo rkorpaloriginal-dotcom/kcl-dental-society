@@ -8,13 +8,13 @@ export default function Home() {
       <VideoHero />
 
       <RevealOnScroll className="mx-auto grid max-w-6xl gap-8 px-6 py-24 md:grid-cols-[3fr_2fr]">
-        <p className="font-display text-4xl leading-tight text-navy md:text-6xl">
+        <h2 className="font-display text-4xl leading-tight text-navy md:text-6xl">
           KCL Dental Society is a community built to make your time at dental school{' '}
           <span className="text-navy underline decoration-gold decoration-4 underline-offset-4">
             unforgettable
           </span>
           .
-        </p>
+        </h2>
         <p className="self-end text-base leading-relaxed text-body">
           Creating lasting connections among students from diverse backgrounds and delivering
           the best London has to offer — academically, socially, and professionally.
