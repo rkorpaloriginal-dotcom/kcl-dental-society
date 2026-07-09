@@ -3,16 +3,16 @@ import { render, screen } from '@testing-library/react';
 import SponsorsPage from './page';
 
 describe('Sponsors page', () => {
-  it('features MDDUS as the diamond sponsor with its description', () => {
+  it('features MDDUS as the diamond sponsor with its logo and description', () => {
     render(<SponsorsPage />);
-    expect(screen.getByText('MDDUS')).toBeInTheDocument();
+    expect(screen.getByAltText('MDDUS')).toBeInTheDocument();
     expect(screen.getByText(/medico-legal/i)).toBeInTheDocument();
   });
 
-  it('lists partner sponsors', () => {
+  it('lists partner sponsor logos', () => {
     render(<SponsorsPage />);
-    expect(screen.getByText('Oralieve')).toBeInTheDocument();
-    expect(screen.getByText('Curaden')).toBeInTheDocument();
+    expect(screen.getByAltText('Oralieve')).toBeInTheDocument();
+    expect(screen.getByAltText('Curaden')).toBeInTheDocument();
   });
 
   it('includes the trade fayre stat callout', () => {

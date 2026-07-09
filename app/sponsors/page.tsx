@@ -30,7 +30,9 @@ export default function SponsorsPage() {
 
       <div className="mx-auto grid max-w-6xl grid-cols-2 px-6 sm:grid-cols-3">
         {partners.map((sponsor) => (
-          <SponsorTile key={sponsor.name} sponsor={sponsor} />
+          <RevealOnScroll key={sponsor.name} variant="clip">
+            <SponsorTile sponsor={sponsor} />
+          </RevealOnScroll>
         ))}
       </div>
 
