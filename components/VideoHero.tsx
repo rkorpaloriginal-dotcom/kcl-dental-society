@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { StaggeredHeadline } from '@/components/StaggeredHeadline';
 
 export function VideoHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -21,7 +22,7 @@ export function VideoHero() {
   }
 
   return (
-    <div className="relative h-[70vh] w-full overflow-hidden bg-navy">
+    <div className="relative h-[85vh] w-full overflow-hidden bg-navy">
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
@@ -32,15 +33,20 @@ export function VideoHero() {
         loop={true}
         playsInline={true}
       />
-      <div className="absolute inset-0 bg-navy/50" />
-      <div className="relative flex h-full flex-col items-center justify-center px-6 text-center text-white">
-        <h1 className="font-display text-4xl md:text-6xl">King&apos;s College London Dental Society</h1>
-        <p className="mt-4 text-xl tracking-wide text-gold">Community · Careers · Culture</p>
+      <div className="absolute inset-0 bg-navy/60" />
+      <div className="relative flex h-full flex-col justify-end px-6 pb-16 md:px-12 md:pb-24">
+        <StaggeredHeadline
+          text="King's College London Dental Society"
+          className="font-display text-5xl leading-[0.95] tracking-tight text-cream md:text-8xl"
+        />
+        <p className="mt-6 text-lg uppercase tracking-[0.2em] text-gold">
+          Community · Careers · Culture
+        </p>
       </div>
       <button
         type="button"
         onClick={toggleMute}
-        className="absolute bottom-6 right-6 rounded-full border border-white/60 px-4 py-2 text-sm text-white hover:border-gold hover:text-gold"
+        className="absolute bottom-6 right-6 rounded-full border border-cream/60 px-4 py-2 text-sm text-cream transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
       >
         {muted ? 'Unmute' : 'Mute'}
       </button>
