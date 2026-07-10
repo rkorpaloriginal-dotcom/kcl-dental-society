@@ -25,8 +25,6 @@ export function RevealOnScroll({
         if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();
-        } else {
-          setVisible(false);
         }
       },
       { threshold: 0.15 }
