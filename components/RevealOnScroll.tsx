@@ -6,10 +6,12 @@ export function RevealOnScroll({
   children,
   className = '',
   variant = 'fade',
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
   variant?: 'fade' | 'clip';
+  id?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
@@ -44,7 +46,7 @@ export function RevealOnScroll({
       : 'transition-all duration-700 ease-expo-out';
 
   return (
-    <div ref={ref} className={`${className} ${transitionClass} ${visibilityClass}`}>
+    <div id={id} ref={ref} className={`${className} ${transitionClass} ${visibilityClass}`}>
       {children}
     </div>
   );

@@ -22,7 +22,7 @@ export function VideoHero() {
   }
 
   return (
-    <div className="relative h-[85vh] w-full overflow-hidden bg-navy">
+    <div className="relative h-[85dvh] w-full overflow-hidden bg-navy">
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
