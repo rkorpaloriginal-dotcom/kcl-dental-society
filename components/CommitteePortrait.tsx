@@ -13,12 +13,12 @@ function initials(name: string): string {
 export function CommitteePortrait({ member }: { member: CommitteeMember }) {
   return (
     <figure className="flex h-full flex-col">
-      <div className="aspect-[4/3] w-full overflow-hidden bg-navy">
+      <div className="aspect-[4/5] w-full overflow-hidden bg-navy">
         {member.photo ? (
           <img
             src={member.photo}
             alt={member.name}
-            className="h-full w-full object-cover object-bottom"
+            className="h-full w-full object-contain"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-display text-2xl text-cream">
