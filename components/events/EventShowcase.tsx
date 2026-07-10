@@ -32,7 +32,6 @@ export function EventShowcase({ categories }: { categories: EventCategory[] }) {
           return (
             <motion.li
               key={category.slug}
-              layoutId={`card-${category.slug}`}
               className={isFeatured ? 'row-span-2' : ''}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -54,8 +53,7 @@ export function EventShowcase({ categories }: { categories: EventCategory[] }) {
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div className="h-2/3 w-full flex-1 overflow-hidden">
-                  <motion.img
-                    layoutId={`image-${category.slug}`}
+                  <img
                     src={category.image}
                     alt=""
                     className="h-full w-full object-cover transition-transform duration-500 ease-expo-out group-hover:scale-105"
@@ -88,16 +86,21 @@ export function EventShowcase({ categories }: { categories: EventCategory[] }) {
             onClick={() => setActiveSlug(null)}
           >
             <motion.div
-              layoutId={`card-${active.slug}`}
               onClick={(event) => event.stopPropagation()}
               className="grid max-h-[85vh] w-full max-w-3xl grid-rows-[16rem_1fr] overflow-hidden bg-cream md:grid-cols-2 md:grid-rows-1"
-              transition={{ type: 'spring', stiffness: 220, damping: 28 }}
+              initial={{ opacity: 0, scale: 0.96, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 12 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 28 }}
             >
               <div className="overflow-hidden">
                 <motion.img
-                  layoutId={`image-${active.slug}`}
+                  key={active.slug}
                   src={active.image}
                   alt=""
+                  initial={{ opacity: 0, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="h-full w-full object-cover"
                 />
               </div>

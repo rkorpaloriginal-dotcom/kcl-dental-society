@@ -12,6 +12,14 @@ class IntersectionObserverMock {
 
 global.IntersectionObserver = IntersectionObserverMock as unknown as typeof IntersectionObserver;
 
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+global.ResizeObserver = ResizeObserverMock as unknown as typeof ResizeObserver;
+
 import '@testing-library/jest-dom/vitest';
 
 // jsdom does not implement video playback; stub it so components that call
