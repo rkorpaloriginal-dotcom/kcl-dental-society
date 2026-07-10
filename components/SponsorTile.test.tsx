@@ -15,6 +15,7 @@ describe('SponsorTile', () => {
       />
     );
     expect(screen.getByText('MDDUS')).toBeInTheDocument();
+    expect(screen.getByText('Diamond Sponsor')).toBeInTheDocument();
     expect(screen.getByText('Medico-legal support.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /MDDUS/i })).toHaveAttribute(
       'href',

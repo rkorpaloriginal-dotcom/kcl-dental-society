@@ -7,7 +7,7 @@ import { EVENT_CATEGORIES } from '@/data/events';
 export const metadata: Metadata = {
   title: 'Events',
   description:
-    'Boat parties, formals, workshops, and more — see what KCL Dental Society runs all year round.',
+    'Formals, workshops, careers events, competitions, and socials from KCL Dental Society.',
 };
 
 export default function EventsPage() {

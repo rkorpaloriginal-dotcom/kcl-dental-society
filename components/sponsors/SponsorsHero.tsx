@@ -22,9 +22,9 @@ export function SponsorsHero({
             as="h1"
           />
           <p className="mt-6 max-w-sm text-base leading-relaxed text-cream/70">
-            We host the largest Trade Fayre of any university dental society in the UK — industry
-            leaders in the room, straight talk about careers, and a night 400+ students turn up
-            for.
+            We host the largest Trade Fayre of any university dental society in the UK,
+            bringing 400+ students together with industry leaders for careers insight,
+            professional networking, and sponsor engagement.
           </p>
           <div className="mt-8 flex items-center gap-6 border-t border-cream/15 pt-6">
             <div>
@@ -43,7 +43,7 @@ export function SponsorsHero({
               href="#become-a-sponsor"
               className="ml-auto border-b-2 border-gold pb-0.5 text-sm text-cream transition-colors duration-300 ease-expo-out hover:text-gold"
             >
-              Partner with us →
+              Partner with us -&gt;
             </a>
           </div>
         </div>

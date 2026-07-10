@@ -17,7 +17,7 @@ function DiamondTile({ sponsor }: { sponsor: Sponsor }) {
         </span>
       </div>
       <div className="relative md:col-span-7">
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-gold">Headline Partner</p>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-gold">Diamond Sponsor</p>
         {sponsor.description && (
           <>
             <span aria-hidden="true" className="mt-4 block font-display text-5xl leading-none text-gold/40">
