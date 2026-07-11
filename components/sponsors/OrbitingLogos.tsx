@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Sponsor } from '@/data/types';
 
-const RADIUS = 220;
-
 export function OrbitingLogos({ sponsors }: { sponsors: Sponsor[] }) {
   const reducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -19,7 +17,7 @@ export function OrbitingLogos({ sponsors }: { sponsors: Sponsor[] }) {
   }
 
   return (
-    <div className="relative mx-auto hidden h-[300px] w-[300px] md:block md:h-[340px] md:w-[340px]">
+    <div className="relative mx-auto hidden md:block md:h-[420px] md:w-[420px] md:[--orbit-radius:170px] lg:h-[520px] lg:w-[520px] lg:[--orbit-radius:220px]">
       <div
         className={`group absolute inset-0 ${
           reducedMotion
@@ -33,7 +31,7 @@ export function OrbitingLogos({ sponsors }: { sponsors: Sponsor[] }) {
             <div
               key={sponsor.name}
               className="absolute left-1/2 top-1/2 h-0 w-0"
-              style={{ transform: `rotate(${angle}deg) translateX(${RADIUS}px)` }}
+              style={{ transform: `rotate(${angle}deg) translateX(var(--orbit-radius))` }}
             >
               <div
                 className={`-translate-x-1/2 -translate-y-1/2 ${
@@ -73,7 +71,7 @@ export function OrbitingLogos({ sponsors }: { sponsors: Sponsor[] }) {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: reducedMotion ? 0 : 0.2 }}
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-56 -translate-x-1/2 rounded-xl border border-navy/10 bg-cream p-4 text-center shadow-xl"
           >
             <p className="font-display text-base text-navy">{active.name}</p>
