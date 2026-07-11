@@ -50,6 +50,28 @@ h3 {
   }
 }
 
+@keyframes grain-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, 2%);
+  }
+}
+
+@keyframes ambient-glow-drift {
+  0%,
+  100% {
+    transform: translate(-10%, -10%);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(10%, 5%);
+    opacity: 0.8;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
