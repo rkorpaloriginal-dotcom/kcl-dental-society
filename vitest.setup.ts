@@ -20,6 +20,20 @@ class ResizeObserverMock {
 
 global.ResizeObserver = ResizeObserverMock as unknown as typeof ResizeObserver;
 
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => false,
+  }),
+});
+
 import '@testing-library/jest-dom/vitest';
 
 // jsdom does not implement video playback; stub it so components that call
