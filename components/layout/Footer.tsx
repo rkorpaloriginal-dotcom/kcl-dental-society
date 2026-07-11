@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { TimelineBackground } from '@/components/timeline/TimelineBackground';
 import { SPONSORS } from '@/data/sponsors';
 
@@ -15,13 +15,13 @@ const NAV_LINKS = [
 export function Footer() {
   const reducedMotion = useReducedMotion();
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: {
       transition: { staggerChildren: reducedMotion ? 0 : 0.12 },
     },
   };
-  const item = {
+  const item: Variants = {
     hidden: reducedMotion ? {} : { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
   };
