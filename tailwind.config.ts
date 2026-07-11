@@ -9,6 +9,14 @@ const config: Config = {
         gold: '#C9992E',
         cream: '#F7F3EC',
         body: '#1A1613',
+        category: {
+          academic: '#3B5BA9',
+          social: '#C9992E',
+          sports: '#2F7A4F',
+          careers: '#6B4C9A',
+          charity: '#C4547D',
+          wellbeing: '#2E8C82',
+        },
       },
       fontFamily: {
         display: ['var(--font-fraunces)', 'Georgia', 'serif'],

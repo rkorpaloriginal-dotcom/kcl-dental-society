@@ -34,3 +34,49 @@ export interface Sponsor {
   // and committed to the repo.
   logo?: string;
 }
+
+export type WhatsOnCategorySlug =
+  | 'academic'
+  | 'social'
+  | 'sports'
+  | 'careers'
+  | 'charity'
+  | 'wellbeing';
+
+export interface WhatsOnCategoryMeta {
+  slug: WhatsOnCategorySlug;
+  label: string;
+  accent: string;
+}
+
+// Dates/venues/ticket links below are placeholder illustrative content pending
+// confirmed committee dates — see data/whats-on.ts header for how to replace them.
+export interface WhatsOnEvent {
+  id: string;
+  title: string;
+  description: string;
+  category: WhatsOnCategorySlug;
+  startDate: string; // ISO date, e.g. '2026-09-18'
+  time?: string;
+  location?: string;
+  coverImage: string;
+  featured?: boolean;
+  registrationUrl?: string;
+  status: 'upcoming' | 'sold-out' | 'cancelled';
+}
+
+export interface AnnualTradition {
+  slug: string;
+  name: string;
+  month: string;
+  description: string;
+  image: string;
+}
+
+export interface PastHighlight {
+  slug: string;
+  title: string;
+  year: string;
+  image: string;
+  stats: { label: string; value: string }[];
+}
