@@ -21,4 +21,23 @@ describe('Footer', () => {
     render(<Footer />);
     expect(screen.queryByText(/lovable/i)).not.toBeInTheDocument();
   });
+
+  it('adds a Join nav link alongside the existing three', () => {
+    render(<Footer />);
+    expect(screen.getByRole('link', { name: 'Join' })).toHaveAttribute('href', '/join');
+  });
+
+  it('has a real closing CTA into /join, not a placeholder', () => {
+    render(<Footer />);
+    const cta = screen.getByRole('link', {
+      name: /join the next generation of king's dentists/i,
+    });
+    expect(cta).toHaveAttribute('href', '/join');
+  });
+
+  it('displays real sponsor logos, not fabricated ones', () => {
+    render(<Footer />);
+    expect(screen.getByAltText('MDDUS')).toBeInTheDocument();
+    expect(screen.getByAltText('Oralieve')).toBeInTheDocument();
+  });
 });
