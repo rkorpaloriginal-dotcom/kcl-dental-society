@@ -29,4 +29,12 @@ describe('Home page', () => {
     const legacyCta = screen.getByRole('link', { name: /join the society/i });
     expect(legacyCta).toHaveAttribute('href', '/join');
   });
+
+  it('features the headline membership and history stats', () => {
+    render(<Home />);
+    expect(screen.getByText('130+')).toBeInTheDocument();
+    expect(screen.getByText(/years of society history/i)).toBeInTheDocument();
+    expect(screen.getByText('1000+')).toBeInTheDocument();
+    expect(screen.getByText(/members across the school/i)).toBeInTheDocument();
+  });
 });

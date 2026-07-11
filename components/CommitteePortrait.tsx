@@ -18,7 +18,7 @@ export function CommitteePortrait({ member }: { member: CommitteeMember }) {
           <img
             src={member.photo}
             alt={member.name}
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-display text-2xl text-cream">
