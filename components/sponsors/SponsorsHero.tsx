@@ -1,5 +1,5 @@
 import { StaggeredHeadline } from '@/components/StaggeredHeadline';
-import { LogoWall } from '@/components/sponsors/LogoWall';
+import { OrbitingLogos } from '@/components/sponsors/OrbitingLogos';
 import type { Sponsor } from '@/data/types';
 
 export function SponsorsHero({
@@ -9,6 +9,8 @@ export function SponsorsHero({
   sponsors: Sponsor[];
   partnerCount: number;
 }) {
+  const partners = sponsors.filter((sponsor) => sponsor.tier === 'partner');
+
   return (
     <section className="bg-navy">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-12 md:items-center md:py-28">
@@ -48,7 +50,7 @@ export function SponsorsHero({
           </div>
         </div>
         <div className="md:col-span-7">
-          <LogoWall sponsors={sponsors} />
+          <OrbitingLogos sponsors={partners} />
         </div>
       </div>
     </section>
