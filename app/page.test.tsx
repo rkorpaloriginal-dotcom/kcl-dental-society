@@ -5,7 +5,7 @@ import Home from './page';
 describe('Home page', () => {
   it('has a real Join link, not a dead button', () => {
     render(<Home />);
-    const joinLink = screen.getByRole('link', { name: /join/i });
+    const joinLink = screen.getByRole('link', { name: 'Join' });
     expect(joinLink.getAttribute('href')).not.toBe('#');
     expect(joinLink.getAttribute('href')).toBeTruthy();
   });
@@ -20,5 +20,13 @@ describe('Home page', () => {
   it('does not contain leftover scaffold branding text', () => {
     render(<Home />);
     expect(screen.queryByText(/lovable/i)).not.toBeInTheDocument();
+  });
+
+  it('introduces the Our Legacy timeline with real Society history and a Join the Society CTA', () => {
+    render(<Home />);
+    expect(screen.getByRole('heading', { name: 'Our Legacy' })).toBeInTheDocument();
+    expect(screen.getByText('1894')).toBeInTheDocument();
+    const legacyCta = screen.getByRole('link', { name: /join the society/i });
+    expect(legacyCta).toHaveAttribute('href', '/join');
   });
 });

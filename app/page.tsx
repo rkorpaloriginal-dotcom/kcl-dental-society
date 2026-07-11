@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { VideoHero } from '@/components/VideoHero';
 import { RevealOnScroll } from '@/components/RevealOnScroll';
+import { Timeline } from '@/components/timeline/Timeline';
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
           </a>
         </div>
       </RevealOnScroll>
+
+      <Timeline />
 
       <RevealOnScroll className="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-3">
         <div className="border-t-2 border-navy pt-6 md:col-span-2 md:row-span-2">
