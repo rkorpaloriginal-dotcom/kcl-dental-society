@@ -2,13 +2,15 @@
 
 import { motion } from 'framer-motion';
 
-export function TimelineNode() {
+export function TimelineNode({ reducedMotion }: { reducedMotion?: boolean } = {}) {
   return (
     <div className="relative flex h-4 w-4 items-center justify-center">
       <motion.div
         className="absolute h-4 w-4 rounded-full bg-gold"
-        initial={{ scale: 1, opacity: 0.4 }}
-        whileInView={{ scale: [1, 1.6, 1], opacity: 1 }}
+        data-testid="timeline-node-pulse"
+        initial={reducedMotion ? false : { scale: 1, opacity: 0.4 }}
+        whileInView={reducedMotion ? undefined : { scale: [1, 1.6, 1], opacity: 1 }}
+        animate={reducedMotion ? { scale: 1, opacity: 1 } : undefined}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       />

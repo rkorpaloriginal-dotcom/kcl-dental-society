@@ -8,4 +8,10 @@ describe('TimelineNode', () => {
     expect(container.querySelector('.blur-md')).toBeInTheDocument();
     expect(container.querySelector('.bg-cream')).toBeInTheDocument();
   });
+
+  it('renders fully visible (no pulse) immediately when reduced motion is requested', () => {
+    const { getByTestId } = render(<TimelineNode reducedMotion={true} />);
+    const pulse = getByTestId('timeline-node-pulse');
+    expect(pulse.style.opacity).toBe('1');
+  });
 });

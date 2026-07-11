@@ -22,7 +22,7 @@ export function TimelineItem({
       }`}
     >
       <div className="flex w-8 flex-none justify-center pt-2 md:w-1/2 md:justify-center">
-        <TimelineNode />
+        <TimelineNode reducedMotion={reducedMotion} />
       </div>
       <motion.div
         className={`flex-1 md:w-1/2 ${isRightAligned ? 'md:pr-12' : 'md:pl-12'}`}
