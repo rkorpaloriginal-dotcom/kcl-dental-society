@@ -15,9 +15,9 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-navy/20 bg-cream text-navy">
+    <header className="border-b border-gold/30 bg-navy text-cream">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="flex items-center gap-3 font-display text-2xl tracking-tight text-navy">
+        <Link href="/" className="flex items-center gap-3 font-display text-2xl tracking-tight text-cream">
           <img
             src="/images/kcl-dental-logo.jpeg"
             alt="KCL Dental Society"
@@ -32,7 +32,7 @@ export function NavBar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="border-b-2 border-transparent pb-1 text-navy transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
+                className="border-b-2 border-transparent pb-1 text-cream transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
               >
                 {link.label}
               </Link>
@@ -44,18 +44,18 @@ export function NavBar() {
           onClick={() => setOpen((prev) => !prev)}
           aria-expanded={open}
           aria-label="Toggle navigation menu"
-          className="text-sm font-semibold uppercase tracking-[0.15em] text-navy md:hidden"
+          className="text-sm font-semibold uppercase tracking-[0.15em] text-cream md:hidden"
         >
           {open ? 'Close' : 'Menu'}
         </button>
       </nav>
       {open && (
-        <ul className="flex flex-col gap-4 border-t border-navy/20 px-6 pb-6 pt-4 md:hidden">
+        <ul className="flex flex-col gap-4 border-t border-cream/20 px-6 pb-6 pt-4 md:hidden">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-[0.15em] text-navy hover:text-gold"
+                className="text-sm font-semibold uppercase tracking-[0.15em] text-cream hover:text-gold"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
