@@ -26,4 +26,11 @@ describe('StaggeredHeadline', () => {
     const { container: container2 } = render(<StaggeredHeadline text="Hello" as="h1" />);
     expect(container2.querySelector('h1')).toBeInTheDocument();
   });
+
+  it('keeps enough mask padding for descenders like g and y', () => {
+    const { container } = render(<StaggeredHeadline text="Young legacy" as="h1" />);
+    const wordMask = container.querySelector('h1 > span');
+    expect(wordMask?.className).toContain('pb-[0.12em]');
+    expect(wordMask?.className).toContain('align-baseline');
+  });
 });

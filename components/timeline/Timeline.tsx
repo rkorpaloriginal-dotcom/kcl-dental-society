@@ -18,7 +18,7 @@ export function Timeline() {
   const lineProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#08121D] px-6 py-32 md:px-12">
+    <section ref={sectionRef} className="relative overflow-hidden bg-navy px-6 py-32 md:px-12">
       <TimelineBackground />
       <div className="relative mx-auto max-w-5xl">
         <h2 className="text-center font-display text-4xl text-cream md:text-6xl">Our Legacy</h2>

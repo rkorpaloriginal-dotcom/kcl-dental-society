@@ -16,4 +16,9 @@ describe('Timeline', () => {
     const cta = screen.getByRole('link', { name: /join the society/i });
     expect(cta).toHaveAttribute('href', '/join');
   });
+
+  it('uses the brand navy background', () => {
+    const { container } = render(<Timeline />);
+    expect(container.querySelector('section')?.className).toContain('bg-navy');
+  });
 });
