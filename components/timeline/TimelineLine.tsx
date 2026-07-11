@@ -22,7 +22,7 @@ export function TimelineLine({
       data-testid="timeline-line-track"
     >
       <motion.div
-        className="w-full origin-top rounded-full bg-gold shadow-[0_0_12px_2px_rgba(201,153,46,0.6)]"
+        className="w-full origin-top rounded-full bg-gradient-to-b from-cream/70 via-gold to-gold"
         style={{ height: '100%', transform: scaleY }}
         data-testid="timeline-line-fill"
       />

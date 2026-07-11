@@ -76,7 +76,7 @@ export function FeaturedEvent({
             {event.registrationUrl && (
               <a
                 href={event.registrationUrl}
-                className="rounded-full bg-gold px-8 py-3 text-sm font-medium text-navy shadow-[0_0_0_0_rgba(201,153,46,0.5)] transition-all duration-300 ease-expo-out hover:shadow-[0_0_24px_4px_rgba(201,153,46,0.45)]"
+                className="rounded-full bg-gold px-8 py-3 text-sm font-medium text-navy transition-all duration-300 ease-expo-out hover:-translate-y-0.5 hover:bg-cream active:translate-y-0"
               >
                 Reserve Your Place
               </a>
