@@ -32,6 +32,7 @@ export function EventCollage({ categories }: { categories: EventCategory[] }) {
           <img
             src={category.image}
             alt=""
+            loading="lazy"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-navy/10" />

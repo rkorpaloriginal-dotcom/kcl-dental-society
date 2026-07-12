@@ -19,6 +19,7 @@ export function PastHighlights() {
               <img
                 src={highlight.image}
                 alt=""
+                loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-500 ease-expo-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-navy/0 transition-colors duration-300 ease-expo-out group-hover:bg-navy/70" />

@@ -30,14 +30,24 @@ describe('CommitteePortrait', () => {
     expect(screen.getByText('Raveena Dheer')).toBeInTheDocument();
   });
 
-  it('is keyboard-focusable so the hover reveal has a keyboard equivalent', () => {
+  it('is not an artificial keyboard tab stop, since the card has no click action', () => {
     render(
       <CommitteePortrait
         member={{ name: 'Aman Aziz', role: 'President', group: 'Leadership' }}
       />
     );
     const card = screen.getByText('Aman Aziz').closest('[tabindex]');
-    expect(card).toHaveAttribute('tabindex', '0');
+    expect(card).not.toBeInTheDocument();
+  });
+
+  it('shows the name/role caption without requiring hover or focus', () => {
+    render(
+      <CommitteePortrait
+        member={{ name: 'Aman Aziz', role: 'President', group: 'Leadership' }}
+      />
+    );
+    expect(screen.getByText('Aman Aziz')).toBeVisible();
+    expect(screen.getByText('President')).toBeVisible();
   });
 
   it('scales the image on hover via a CSS class, not JavaScript', () => {

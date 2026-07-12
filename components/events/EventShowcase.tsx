@@ -1,13 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { EventCategory } from '@/data/types';
+import { useDialogFocus } from '@/lib/useDialogFocus';
 
 export function EventShowcase({ categories }: { categories: EventCategory[] }) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const activeIndex = categories.findIndex((category) => category.slug === activeSlug);
   const active = activeIndex === -1 ? null : categories[activeIndex];
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useDialogFocus(Boolean(active), dialogRef);
 
   useEffect(() => {
     if (!active) return;
@@ -86,6 +90,7 @@ export function EventShowcase({ categories }: { categories: EventCategory[] }) {
             onClick={() => setActiveSlug(null)}
           >
             <motion.div
+              ref={dialogRef}
               onClick={(event) => event.stopPropagation()}
               className="grid max-h-[85vh] w-full max-w-3xl grid-rows-[16rem_1fr] overflow-hidden bg-cream md:grid-cols-2 md:grid-rows-1"
               initial={{ opacity: 0, scale: 0.96, y: 12 }}
@@ -107,9 +112,10 @@ export function EventShowcase({ categories }: { categories: EventCategory[] }) {
               <div className="relative flex flex-col justify-center p-8 md:p-10">
                 <button
                   type="button"
+                  data-autofocus
                   onClick={() => setActiveSlug(null)}
                   aria-label="Close"
-                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center border border-navy/20 text-navy transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
+                  className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-navy/20 text-navy transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
                 >
                   ×
                 </button>

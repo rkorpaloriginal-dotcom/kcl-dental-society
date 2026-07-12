@@ -6,6 +6,7 @@ import Link from 'next/link';
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/events', label: 'Events' },
+  { href: '/whats-on', label: "What's On" },
   { href: '/committee', label: 'Committee' },
   { href: '/sponsors', label: 'Sponsors' },
   { href: '/join', label: 'Join' },
@@ -43,14 +44,15 @@ export function NavBar() {
           type="button"
           onClick={() => setOpen((prev) => !prev)}
           aria-expanded={open}
+          aria-controls="mobile-nav-menu"
           aria-label="Toggle navigation menu"
-          className="text-sm font-semibold uppercase tracking-[0.15em] text-cream md:hidden"
+          className="-mr-2 flex h-11 min-w-11 items-center justify-center px-2 text-sm font-semibold uppercase tracking-[0.15em] text-cream md:hidden"
         >
           {open ? 'Close' : 'Menu'}
         </button>
       </nav>
       {open && (
-        <ul className="flex flex-col gap-4 border-t border-cream/20 px-6 pb-6 pt-4 md:hidden">
+        <ul id="mobile-nav-menu" className="flex flex-col gap-4 border-t border-cream/20 px-6 pb-6 pt-4 md:hidden">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link

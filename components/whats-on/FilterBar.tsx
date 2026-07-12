@@ -21,7 +21,7 @@ export function FilterBar({
   return (
     <div className="sticky top-0 z-30 border-b border-navy/10 bg-cream/90 backdrop-blur-sm">
       <div
-        role="tablist"
+        role="group"
         aria-label="Filter events by category"
         className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-6 py-4"
       >
@@ -31,8 +31,7 @@ export function FilterBar({
             <button
               key={option.slug}
               type="button"
-              role="tab"
-              aria-selected={isActive}
+              aria-pressed={isActive}
               onClick={() => onChange(option.slug)}
               className="relative shrink-0 rounded-full px-4 py-2 text-sm transition-colors duration-300 ease-expo-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >

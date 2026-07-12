@@ -10,12 +10,19 @@ export function TimelineCard({ milestone }: { milestone: TimelineMilestone }) {
         <p className="mt-4 font-display text-xl text-gold">{milestone.statistic}</p>
       )}
       {milestone.quote && (
-        <blockquote className="mt-4 border-l-2 border-gold/50 pl-4 text-sm italic text-cream/70">
-          &ldquo;{milestone.quote}&rdquo;
+        <blockquote className="mt-4 text-sm italic text-cream/70">
+          <span className="mr-1 font-display not-italic text-gold">&ldquo;</span>
+          {milestone.quote}
+          <span className="ml-1 font-display not-italic text-gold">&rdquo;</span>
         </blockquote>
       )}
       {milestone.image && (
-        <img src={milestone.image} alt="" className="mt-4 w-full rounded-lg object-cover" />
+        <img
+          src={milestone.image}
+          alt=""
+          loading="lazy"
+          className="mt-4 w-full rounded-lg object-cover"
+        />
       )}
       {(milestone.externalLink || milestone.documentLink) && (
         <div className="mt-4 flex gap-4 text-sm text-gold">

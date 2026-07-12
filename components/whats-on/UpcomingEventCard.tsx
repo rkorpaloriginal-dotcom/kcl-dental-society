@@ -25,6 +25,7 @@ export function UpcomingEventCard({
         <img
           src={event.coverImage}
           alt=""
+          loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 ease-expo-out group-hover:scale-105"
         />
       </div>

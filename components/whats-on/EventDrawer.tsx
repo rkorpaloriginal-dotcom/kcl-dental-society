@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { WhatsOnEvent } from '@/data/types';
 import { CATEGORY_META } from '@/data/whats-on';
 import { buildIcsUrl, formatEventDate } from '@/lib/whats-on';
 import { CATEGORY_STYLES } from './categoryStyles';
+import { useDialogFocus } from '@/lib/useDialogFocus';
 
 export function EventDrawer({
   event,
@@ -14,6 +15,10 @@ export function EventDrawer({
   event: WhatsOnEvent | null;
   onClose: () => void;
 }) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useDialogFocus(Boolean(event), dialogRef);
+
   useEffect(() => {
     if (!event) return;
 
@@ -45,6 +50,7 @@ export function EventDrawer({
           onClick={onClose}
         >
           <motion.div
+            ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-label={event.title}
@@ -56,12 +62,13 @@ export function EventDrawer({
             transition={{ type: 'spring', stiffness: 300, damping: 32 }}
           >
             <div className="relative h-56 w-full flex-none overflow-hidden">
-              <img src={event.coverImage} alt="" className="h-full w-full object-cover" />
+              <img src={event.coverImage} alt="" loading="lazy" className="h-full w-full object-cover" />
               <button
                 type="button"
+                data-autofocus
                 onClick={onClose}
                 aria-label="Close"
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-navy/70 text-cream backdrop-blur-sm transition-colors duration-300 ease-expo-out hover:bg-gold hover:text-navy"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-navy/70 text-cream backdrop-blur-sm transition-colors duration-300 ease-expo-out hover:bg-gold hover:text-navy"
               >
                 ×
               </button>

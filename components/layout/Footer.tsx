@@ -27,7 +27,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#08121D] px-6 py-24 text-cream md:px-12">
+    <footer className="relative overflow-hidden bg-navy-dark px-6 py-24 text-cream md:px-12">
       <TimelineBackground />
       <motion.div
         className="relative mx-auto flex max-w-4xl flex-col items-center gap-10 text-center"
@@ -90,7 +90,7 @@ export function Footer() {
           </Link>
         </motion.div>
 
-        <motion.div variants={item} className="text-xs text-cream/50">
+        <motion.div variants={item} className="text-xs text-cream/70">
           <p>
             © {new Date().getFullYear()} King&apos;s College London Dental Society. All rights
             reserved.
