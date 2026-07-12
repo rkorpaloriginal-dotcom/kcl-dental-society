@@ -10,6 +10,7 @@ export function SponsorsHero({
   partnerCount: number;
 }) {
   const partners = sponsors.filter((sponsor) => sponsor.tier === 'partner');
+  const diamond = sponsors.find((sponsor) => sponsor.tier === 'diamond');
 
   return (
     <section className="bg-navy">
@@ -50,7 +51,7 @@ export function SponsorsHero({
           </div>
         </div>
         <div className="md:col-span-7">
-          <OrbitingLogos sponsors={partners} />
+          <OrbitingLogos sponsors={partners} centerSponsor={diamond} />
         </div>
       </div>
     </section>

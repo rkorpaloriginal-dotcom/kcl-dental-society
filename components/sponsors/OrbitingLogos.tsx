@@ -4,10 +4,17 @@ import { useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Sponsor } from '@/data/types';
 
-export function OrbitingLogos({ sponsors }: { sponsors: Sponsor[] }) {
+export function OrbitingLogos({
+  sponsors,
+  centerSponsor,
+}: {
+  sponsors: Sponsor[];
+  centerSponsor?: Sponsor;
+}) {
   const reducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const active = activeIndex === null ? null : sponsors[activeIndex];
+  const [centerActive, setCenterActive] = useState(false);
+  const active = centerActive ? centerSponsor ?? null : activeIndex === null ? null : sponsors[activeIndex];
 
   function activate(index: number) {
     setActiveIndex(index);
@@ -18,6 +25,32 @@ export function OrbitingLogos({ sponsors }: { sponsors: Sponsor[] }) {
 
   return (
     <div className="relative mx-auto hidden md:block md:h-[420px] md:w-[420px] md:[--orbit-radius:170px] lg:h-[520px] lg:w-[520px] lg:[--orbit-radius:220px]">
+      {centerSponsor && (
+        <div className="absolute left-1/2 top-1/2 z-[5] -translate-x-1/2 -translate-y-1/2">
+          <button
+            type="button"
+            onMouseEnter={() => setCenterActive(true)}
+            onMouseLeave={() => setCenterActive(false)}
+            onFocus={() => setCenterActive(true)}
+            onBlur={() => setCenterActive(false)}
+            aria-label={`${centerSponsor.name} — Diamond Sponsor`}
+            className="flex h-28 w-28 items-center justify-center rounded-full border-2 border-gold bg-cream p-4 shadow-xl transition-all duration-300 ease-expo-out hover:scale-[1.06] focus-visible:scale-[1.06] lg:h-36 lg:w-36"
+          >
+            {centerSponsor.logo ? (
+              <img
+                src={centerSponsor.logo}
+                alt=""
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <span className="font-display text-sm text-navy">{centerSponsor.name}</span>
+            )}
+          </button>
+          <p className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
+            Diamond Sponsor
+          </p>
+        </div>
+      )}
       <div
         className={`group absolute inset-0 ${
           reducedMotion
