@@ -15,7 +15,7 @@ describe('WhatsOnExperience', () => {
     const filterGroup = screen.getByRole('group', { name: /filter events/i });
     fireEvent.click(within(filterGroup).getByRole('button', { name: 'Sports' }));
     expect(screen.getByText('Sports Day')).toBeInTheDocument();
-    expect(screen.queryByText('Freshers\' Fair')).not.toBeInTheDocument();
+    expect(screen.queryByText('Halfway Ball')).not.toBeInTheDocument();
   });
 
   it('clicking an upcoming event card opens the drawer with its details', () => {
