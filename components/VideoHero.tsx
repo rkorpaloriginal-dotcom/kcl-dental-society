@@ -47,11 +47,9 @@ export function VideoHero() {
     setMuted(video.muted);
   }
 
-  const glowStyle: CSSProperties & Record<'--glow-x' | '--glow-y', string> = {
-    '--glow-x': '33%',
-    '--glow-y': '33%',
+  const glowStyle: CSSProperties = {
     background:
-      'radial-gradient(600px circle at var(--glow-x) var(--glow-y), rgba(201,153,46,0.18), transparent 70%)',
+      'radial-gradient(600px circle at var(--glow-x, 33%) var(--glow-y, 33%), rgba(201,153,46,0.18), transparent 70%)',
   };
 
   return (
