@@ -36,29 +36,6 @@ export default function Home() {
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="grid overflow-hidden border-y-2 border-navy bg-cream text-navy md:grid-cols-[1fr_1fr_auto]">
-          <div className="px-6 py-8 md:border-r-2 md:border-navy md:px-10 md:py-10">
-            <p className="font-display text-5xl leading-none md:text-7xl">130+</p>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.24em] text-body/60">
-              Years of society history
-            </p>
-          </div>
-          <div className="border-t-2 border-navy px-6 py-8 md:border-r-2 md:border-t-0 md:px-10 md:py-10">
-            <p className="font-display text-5xl leading-none md:text-7xl">1000+</p>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.24em] text-body/60">
-              Members across the school
-            </p>
-          </div>
-          <div className="border-t-2 border-navy px-6 py-6 md:border-t-0 md:px-8 md:py-10">
-            <p className="max-w-xs text-sm leading-relaxed text-body">
-              A student-led network connecting generations of King's dental students through
-              academic, professional, and social life.
-            </p>
-          </div>
-        </div>
-      </RevealOnScroll>
-
       <Timeline />
 
       <RevealOnScroll className="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-3">
