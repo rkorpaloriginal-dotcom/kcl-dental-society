@@ -27,7 +27,7 @@ export function UpcomingSection() {
         </p>
         <a
           href="https://go.link2app.co/QlZx6wiDP0b"
-          className="mt-8 inline-block rounded-full border border-navy px-6 py-3 text-sm text-navy transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
+          className="mt-8 inline-block rounded-full border border-navy px-6 py-3 text-sm text-navy outline-none transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold focus-visible:border-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         >
           Get notified
         </a>

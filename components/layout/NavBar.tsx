@@ -18,7 +18,7 @@ export function NavBar() {
   return (
     <header className="border-b border-gold/30 bg-navy text-cream">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="flex items-center gap-3 font-display text-2xl tracking-tight text-cream">
+        <Link href="/" className="flex items-center gap-3 rounded-sm font-display text-2xl tracking-tight text-cream outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold">
           <img
             src="/images/kcl-dental-logo.jpeg"
             alt="KCL Dental Society"
@@ -33,7 +33,7 @@ export function NavBar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="border-b-2 border-transparent pb-1 text-cream transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
+                className="rounded-sm border-b-2 border-transparent pb-1 text-cream outline-none transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold focus-visible:border-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 {link.label}
               </Link>
@@ -46,7 +46,7 @@ export function NavBar() {
           aria-expanded={open}
           aria-controls="mobile-nav-menu"
           aria-label="Toggle navigation menu"
-          className="-mr-2 flex h-11 min-w-11 items-center justify-center px-2 text-sm font-semibold uppercase tracking-[0.15em] text-cream md:hidden"
+          className="-mr-2 flex h-11 min-w-11 items-center justify-center rounded-sm px-2 text-sm font-semibold uppercase tracking-[0.15em] text-cream outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:hidden"
         >
           {open ? 'Close' : 'Menu'}
         </button>
@@ -57,7 +57,7 @@ export function NavBar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-[0.15em] text-cream hover:text-gold"
+                className="rounded-sm text-sm font-semibold uppercase tracking-[0.15em] text-cream outline-none hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

@@ -24,6 +24,11 @@ a:hover {
   color: var(--color-gold);
 }
 
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
 h1,
 h2,
 h3 {

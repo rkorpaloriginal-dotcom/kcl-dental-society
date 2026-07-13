@@ -10,8 +10,9 @@ describe('TimelineBackground', () => {
     expect(root?.className).toContain('pointer-events-none');
   });
 
-  it('renders the layered gradient, grain, and blueprint-illustration layers', () => {
+  it('renders the layered gradient glows', () => {
     const { container } = render(<TimelineBackground />);
-    expect(container.querySelectorAll('svg').length).toBeGreaterThanOrEqual(3);
+    expect(container.querySelectorAll('svg').length).toBe(0);
+    expect(container.querySelectorAll('[class*="radial-gradient"]').length).toBeGreaterThanOrEqual(2);
   });
 });

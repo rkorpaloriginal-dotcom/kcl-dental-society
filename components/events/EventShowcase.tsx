@@ -109,7 +109,7 @@ export function EventShowcase({ categories }: { categories: EventCategory[] }) {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="relative flex flex-col justify-center p-8 md:p-10">
+              <div className="relative flex flex-col justify-center overflow-y-auto p-8 md:p-10">
                 <button
                   type="button"
                   data-autofocus

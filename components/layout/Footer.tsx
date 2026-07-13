@@ -52,7 +52,7 @@ export function Footer() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-cream transition-colors duration-300 ease-expo-out hover:text-gold"
+                className="rounded-sm text-cream outline-none transition-colors duration-300 ease-expo-out hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 {link.label}
               </Link>
@@ -76,7 +76,7 @@ export function Footer() {
         <motion.a
           variants={item}
           href="mailto:kingsdentalsociety@gmail.com"
-          className="text-sm text-cream/80 transition-colors duration-300 ease-expo-out hover:text-gold"
+          className="rounded-sm text-sm text-cream/80 outline-none transition-colors duration-300 ease-expo-out hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
           kingsdentalsociety@gmail.com
         </motion.a>
@@ -84,7 +84,7 @@ export function Footer() {
         <motion.div variants={item}>
           <Link
             href="/join"
-            className="inline-block rounded-full bg-gold px-8 py-4 text-base font-medium text-navy transition-colors duration-300 ease-expo-out hover:bg-cream"
+            className="inline-block rounded-full bg-gold px-8 py-4 text-base font-medium text-navy outline-none transition-colors duration-300 ease-expo-out hover:bg-cream focus-visible:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cream"
           >
             Join the Next Generation of King&apos;s Dentists
           </Link>

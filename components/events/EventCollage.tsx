@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 import type { EventCategory } from '@/data/types';
 
 const TILE_LAYOUT = [
-  'col-start-1 col-span-2 row-start-1 row-span-3',
-  'col-start-3 col-span-1 row-start-1 row-span-2',
-  'col-start-4 col-span-1 row-start-1 row-span-2',
-  'col-start-3 col-span-2 row-start-3 row-span-1',
-  'col-start-1 col-span-1 row-start-4 row-span-1',
-  'col-start-2 col-span-1 row-start-4 row-span-1',
-  'col-start-3 col-span-1 row-start-4 row-span-1',
-  'col-start-4 col-span-1 row-start-4 row-span-1',
+  'md:col-start-1 md:col-span-2 md:row-start-1 md:row-span-3',
+  'md:col-start-3 md:col-span-1 md:row-start-1 md:row-span-2',
+  'md:col-start-4 md:col-span-1 md:row-start-1 md:row-span-2',
+  'md:col-start-3 md:col-span-2 md:row-start-3 md:row-span-1',
+  'md:col-start-1 md:col-span-1 md:row-start-4 md:row-span-1',
+  'md:col-start-2 md:col-span-1 md:row-start-4 md:row-span-1',
+  'md:col-start-3 md:col-span-1 md:row-start-4 md:row-span-1',
+  'md:col-start-4 md:col-span-1 md:row-start-4 md:row-span-1',
 ];
 
 export function EventCollage({ categories }: { categories: EventCategory[] }) {
   return (
-    <div className="grid h-[420px] grid-cols-4 grid-rows-4 gap-2 md:h-[560px]">
+    <div className="grid h-[360px] grid-cols-2 grid-rows-4 gap-2 md:h-[560px] md:grid-cols-4">
       {categories.slice(0, 8).map((category, index) => (
         <motion.div
           key={category.slug}

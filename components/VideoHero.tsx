@@ -105,7 +105,7 @@ export function VideoHero() {
       <button
         type="button"
         onClick={toggleMute}
-        className="absolute bottom-6 right-6 rounded-full border border-cream/60 px-4 py-2 text-sm text-cream transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
+        className="absolute bottom-6 right-6 rounded-full border border-cream/60 px-4 py-2 text-sm text-cream outline-none transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold focus-visible:border-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
       >
         {muted ? 'Unmute' : 'Mute'}
       </button>

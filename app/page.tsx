@@ -23,13 +23,13 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 md:col-span-2">
           <Link
             href="/join"
-            className="rounded-full bg-navy px-6 py-3 text-cream transition-colors duration-300 ease-expo-out hover:bg-gold"
+            className="rounded-full bg-navy px-6 py-3 text-cream outline-none transition-colors duration-300 ease-expo-out hover:bg-gold focus-visible:bg-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
           >
             Join
           </Link>
           <a
             href="https://go.link2app.co/QlZx6wiDP0b"
-            className="rounded-full border border-navy px-6 py-3 text-navy transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold"
+            className="rounded-full border border-navy px-6 py-3 text-navy outline-none transition-colors duration-300 ease-expo-out hover:border-gold hover:text-gold focus-visible:border-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             Society App
           </a>
@@ -46,7 +46,7 @@ export default function Home() {
           </p>
           <Link
             href="/events"
-            className="mt-6 inline-block border-b-2 border-gold text-navy hover:text-gold"
+            className="mt-6 inline-block rounded-sm border-b-2 border-gold text-navy outline-none hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             Explore Events →
           </Link>
@@ -56,7 +56,7 @@ export default function Home() {
           <p className="mt-2 text-sm text-body">The people making it all happen.</p>
           <Link
             href="/committee"
-            className="mt-4 inline-block border-b-2 border-gold text-navy hover:text-gold"
+            className="mt-4 inline-block rounded-sm border-b-2 border-gold text-navy outline-none hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             Meet the Committee →
           </Link>
@@ -68,7 +68,7 @@ export default function Home() {
           </p>
           <Link
             href="/sponsors"
-            className="mt-4 inline-block border-b-2 border-gold text-navy hover:text-gold"
+            className="mt-4 inline-block rounded-sm border-b-2 border-gold text-navy outline-none hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             Our Sponsors →
           </Link>

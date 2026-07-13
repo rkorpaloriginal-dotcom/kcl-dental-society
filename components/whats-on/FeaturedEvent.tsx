@@ -27,7 +27,7 @@ export function FeaturedEvent({
             className="h-full w-full object-cover"
             initial={{ scale: 1 }}
             animate={{ scale: 1.03 }}
-            transition={{ duration: 20, ease: 'linear' }}
+            transition={{ duration: 20, ease: [0.45, 0, 0.55, 1] }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
         </div>

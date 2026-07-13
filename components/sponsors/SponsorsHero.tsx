@@ -44,7 +44,7 @@ export function SponsorsHero({
             </div>
             <a
               href="#become-a-sponsor"
-              className="ml-auto border-b-2 border-gold pb-0.5 text-sm text-cream transition-colors duration-300 ease-expo-out hover:text-gold"
+              className="ml-auto rounded-sm border-b-2 border-gold pb-0.5 text-sm text-cream outline-none transition-colors duration-300 ease-expo-out hover:text-gold focus-visible:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Partner with us -&gt;
             </a>
